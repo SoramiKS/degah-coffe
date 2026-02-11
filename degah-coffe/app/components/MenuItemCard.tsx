@@ -6,7 +6,7 @@ import { Coffee } from 'lucide-react';
 interface MenuItemCardProps {
   name: string;
   description: string;
-  price: string;
+  price?: string;
   index?: number;
 }
 
@@ -22,10 +22,12 @@ const MenuItemCard = ({ name, description, price, index = 0 }: MenuItemCardProps
     >
       <div className="flex justify-between items-start mb-4">
         <div className="flex items-center">
-          <Coffee className="h-4 w-4 mr-2 text-[#8B4513]" />
+          <div className="bg-white rounded-sm p-0.5 mr-2">
+            <Coffee className="h-3 w-3 text-black" />
+          </div>
           <h3 className="text-xl font-serif group-hover:text-[#8B4513] transition-colors">{name}</h3>
         </div>
-        <span className="text-[#8B4513] font-medium">{price}</span>
+        <span className="text-[#8B4513] font-medium">$</span>
       </div>
       <p className="text-gray-400 text-sm">{description}</p>
     </motion.div>
